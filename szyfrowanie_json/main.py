@@ -35,6 +35,7 @@ def szyfrowanie(output_file, data, password):
     with open(output_file, 'wb') as f:
         f.write(salt + iv + encrypted_data)
         f.flush()
+    return salt, iv, encrypted_data
 
 def odszyfrowanie(input_file, password):
     """Odszyfrowuje zawartość zaszyfrowanego pliku"""
